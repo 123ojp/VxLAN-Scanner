@@ -62,7 +62,8 @@ ip link del $IFACE
   - Use this if you know the inside intranet address
 - `-v <log_level>`: Logging level `['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL']` (Default: INFO)
   - VxLAN peer found log is on `CRITICAL`
-- `-m` : Remote MAC address from scan result (for cheet sheet only)
+- `-tip` : tunnel address **inference** from scan result, **contains subnets** (for cheet sheet only)
+- `-tvip` : Victim tunnel address from scan result (for cheet sheet only)
 
 
 ## better way to scan full public ip
