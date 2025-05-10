@@ -69,11 +69,11 @@ ip link del $IFACE
 ## better way to scan full public ip
 ```
 wget https://bgp.tools/table.txt
-cat table.txt |VxLANp -v "::"|cut -d " " -f 1 > v4table.txt
-pip3 install agVxLANgate6
-agVxLANgate6 v4table.txt > aggrv4table.txt
+cat table.txt |grep -v "::"|cut -d " " -f 1 > v4table.txt
+pip3 install aggregate6
+aggregate6 v4table.txt > aggrv4table.txt
 #cat aggrv4table.txt|wc -l   #159652
-python3 main.py -i  <interface> -lh <your_public_IP> -s aggrv4table.txt -d <your_target> -ss
+python3 main.py -i <interface> -l <your_public_IP> -d aggrv4table.txt -ss
 ```
 
 ## Lab
