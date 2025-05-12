@@ -15,7 +15,8 @@ from queue import Queue
 
 # setting
 STAUTS_FILENAME = ".routerosvxlanscanner.status"
-#MAGIC_MAC = "01:00:0C:CC:CC:CC"
+#MAGIC_MAC = "01:00:0C:CC:CC:CC" # for cisco
+#MAGIC_MAC = "33:33:00:00:00:01" # for listen v6 RA
 MAGIC_MAC = "ff:ff:ff:ff:ff:ff"
 MAGIC_DST_MAC = "ff:ff:ff:ff:ff:ff"
 
