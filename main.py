@@ -323,6 +323,8 @@ VID={vids[0]}
 ip link add $IFACE type vxlan id $VID remote $DSTADDR local $MYPUBIP dstport $DPORT 
 ip link set up dev $IFACE
 ip addr add $TIP dev $IFACE
+### You need to ping to the same subnet to trigger an ARP request, which lets the server know you are here ###
+ping -c 2 $TVIP 
 ## route possible private ip ##
 ip r add 10.0.0.0/8 via $TVIP dev $IFACE 
 ip r add 172.16.0.0/12 via $TVIP dev $IFACE
