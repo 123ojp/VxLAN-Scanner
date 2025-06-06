@@ -94,6 +94,7 @@ IF_NAME=vxlan-test
 ip link add $IF_NAME type vxlan id $VID remote $DSTADDR local $MYPUBIP dstport $DPORT 
 ip link set up dev $IF_NAME
 ip addr add 10.0.0.2/24 dev $IF_NAME
+### You need to ping to the same subnet to trigger an ARP request, which lets the server know you are here ###
 ping -c 1 10.0.0.1
 ip r add 192.168.122.0/24 via 10.0.0.1
 
